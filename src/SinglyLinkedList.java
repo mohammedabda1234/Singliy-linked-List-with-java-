@@ -90,6 +90,23 @@ public class SinglyLinkedList {
         return current;
 
     }
+
+    public void delete(int position) {
+        if(position == 1) {
+            head = head.next;
+        }else {
+            listNode perivous = head;
+            int count =1;
+            while(count < position - 1) {
+                perivous = perivous.next;
+                count++;
+
+            }
+            listNode current = perivous.next;
+            perivous.next = current.next;
+        }
+    }
+
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.insertFirst(0);
