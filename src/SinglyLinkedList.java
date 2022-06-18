@@ -36,6 +36,18 @@ public class SinglyLinkedList {
         System.out.print("the length of LinkedList "+count);
         return count;
     }
+    public void insertLast(int value) {
+        listNode newNode = new listNode(value);
+        if(head == null) {
+            head = newNode;
+            return ;
+        }
+        listNode crueent = head;
+        while(null != crueent.next) {
+            crueent = crueent.next;
+        }
+        crueent.next = newNode;
+    }
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.insertFirst(0);
