@@ -23,6 +23,19 @@ public class SinglyLinkedList {
         System.out.println("null");
         System.out.println();
     }
+    public int length() {
+        if(head == null) {
+            return 0;
+        }
+        listNode current = head;
+        int count = 0;
+        while(current != null) {
+            count++;
+            current = current.next;
+        }
+        System.out.print("the length of LinkedList "+count);
+        return count;
+    }
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.insertFirst(0);
@@ -30,6 +43,7 @@ public class SinglyLinkedList {
         sll.insertFirst(5);
         sll.insertFirst(7);
         sll.print();
+        sll.length();
     }
 
 }
