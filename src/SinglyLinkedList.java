@@ -67,6 +67,15 @@ public class SinglyLinkedList {
         node.next = current;
 
     }
+    public listNode deleteFirst() {
+        if(head == null) {
+            return null;
+        }
+        listNode temp = head;
+        head = head.next;
+        temp.next = null;
+        return temp;
+    }
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.insertFirst(0);
