@@ -76,6 +76,20 @@ public class SinglyLinkedList {
         temp.next = null;
         return temp;
     }
+    public listNode deleteLast() {
+        if(head == null || head.next == null) {
+            return head;
+        }
+        listNode current = head;
+        listNode perivous = null;
+        while(current.next != null) {
+            perivous = current;
+            current = current.next;
+        }
+        perivous.next = null;
+        return current;
+
+    }
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.insertFirst(0);
