@@ -106,7 +106,19 @@ public class SinglyLinkedList {
             perivous.next = current.next;
         }
     }
-
+    public boolean search(int searchKey) {
+        if(head == null) {
+            return false;
+        }
+        listNode current = head;
+        while(current != null) {
+            if(current.data == searchKey) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.insertFirst(0);
