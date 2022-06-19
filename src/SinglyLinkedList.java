@@ -119,6 +119,24 @@ public class SinglyLinkedList {
         }
         return false;
     }
+    public void reverse() {
+        if(head == null) {
+            return;
+        }
+        listNode pointer = head;
+        listNode previous = null;
+        listNode current = null;
+
+        while (pointer != null) {
+            current = pointer;
+            pointer = pointer.next;
+
+            current.next = previous;
+            previous = current;
+            head = current;
+
+        }
+    }
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.insertFirst(0);
