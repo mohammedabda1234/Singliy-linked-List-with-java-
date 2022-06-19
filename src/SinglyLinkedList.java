@@ -137,6 +137,27 @@ public class SinglyLinkedList {
 
         }
     }
+
+    public listNode midNode() {
+
+        if(head == null) {
+            return null;
+        }
+
+        listNode slowPointer = head;
+        listNode fastpointer = head;
+
+        while(fastpointer != null && fastpointer.next != null) {
+
+            fastpointer = fastpointer.next.next;
+            slowPointer =  slowPointer.next;
+
+            System.out.println(slowPointer.data);
+        }
+        return slowPointer;
+
+    }
+
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.insertFirst(0);
