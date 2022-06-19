@@ -173,6 +173,27 @@ public class SinglyLinkedList {
             }
         }
     }
+    public listNode insertInSortedList(int value) {
+        listNode newNode = new listNode(value);
+
+        if(head == null) {
+            return newNode;
+        }
+
+        listNode current = head;
+        listNode temp = null;
+
+        while(current != null && current.data < newNode.data) {
+
+            temp = current;
+            current = current.next;
+
+
+        }
+        newNode.next = current;
+        temp.next = newNode;
+        return head;
+    }
 
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
